@@ -2,14 +2,14 @@
 
 Hello,
 
-I'm [Liviu Balan](http://www.liviubalan.com/) and here is transcoder-cli project based on
-[FFmpeg](https://en.wikipedia.org/wiki/FFmpeg). This tool allows you to convert multimedia files to other format using
-[Linux](https://en.wikipedia.org/wiki/Linux)
+I'm [Liviu Balan](http://www.liviubalan.com/) and here is [transcoder-cli](https://github.com/liviubalan/transcoder-cli)
+project based on [FFmpeg](https://en.wikipedia.org/wiki/FFmpeg). This tool allows you to convert multimedia files to
+other format using [Linux](https://en.wikipedia.org/wiki/Linux)
 [Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface).
 
 ## Requirements
 
-In order to run this project on your machine you have to install the following packages:
+In order to run this project on your machine you have to install the following:
 
 * A [Linux](https://en.wikipedia.org/wiki/Linux) [operating system](https://en.wikipedia.org/wiki/Operating_system)
 * A [Linux](https://en.wikipedia.org/wiki/Linux)
@@ -53,6 +53,10 @@ This project was tested using the following configuration:
  ```bash
  sudo apt-get install ffmpeg
  ```
+
+## Presets
+
+This project is using the [FFmpeg](https://ffmpeg.org/) presets from [WinFF](http://winff.org/) project.
 
 Thank you for cloning!  
 Bye bye!
