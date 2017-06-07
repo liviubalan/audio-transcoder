@@ -56,7 +56,12 @@ This project was tested using the following configuration:
 
 ## Presets
 
-This project is using the [FFmpeg](https://ffmpeg.org/) presets from [WinFF](http://winff.org/) project.
+This project is using the [FFmpeg](https://ffmpeg.org/) presets from [WinFF](http://winff.org/) project. In order to
+install `WinFF` package use:
+
+ ```bash
+ sudo apt-get install winff-qt
+ ```
 
 Thank you for cloning!  
 Bye bye!
