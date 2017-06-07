@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Usage CLI:
-# input_dir='/home/liviu/Desktop/x-data/Convert/CallRecordings/2017-01-26/' input_extension='wav' output_dir='/home/liviu/Desktop/x-data/Convert/CallRecordings/convert/' output_extension='mp3' ./audio-transcoder.sh
-# input_dir='/media/sf_x-data/Convert/CallRecordings/2017-01-26/' input_extension='wav' output_dir='/media/sf_x-data/Convert/CallRecordings/convert/' output_extension='mp3' ./audio-transcoder.sh
-
 # Include libraries
 source ./lib.sh
 
