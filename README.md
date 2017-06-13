@@ -51,6 +51,7 @@ This project was tested using the following configuration:
 3. [ffmpeg](https://packages.ubuntu.com/search?keywords=ffmpeg) package. In order to install `ffmpeg` package use:
 
  ```bash
+ sudo apt-get update
  sudo apt-get install ffmpeg
  ```
 
