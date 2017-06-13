@@ -92,6 +92,89 @@ function liv_sed_replace_end {
     sed "s/$LIV_TMP_SEARCH\$/$LIV_TMP_REPLACE/g"
 }
 
+# Print with color and return to the default config foreground color
+# $1 = Message
+# $2 = Message color. Default to $LIV_COLOR_DEFAULT
+# $3 = Status message
+# $4 = Status color. Default to $LIV_COLOR_DEFAULT
+# Usage:
+# liv_print_color 'Message'
+# liv_print_color 'Message' '\e[32m'
+# liv_print_color 'Message' '\e[39m' 'DONE'
+# liv_print_color 'Message' '\e[39m' 'DONE' '\e[32m'
+function liv_print_color {
+    if [ "$#" -gt 0 ]; then
+        local LIV_MESSAGE="$1"
+        local LIV_MESSAGE_COLOR="$LIV_COLOR_DEFAULT"
+        local LIV_MESSAGE_STATUS=''
+        local LIV_STATUS=''
+        local LIV_STATUS_COLOR="$LIV_COLOR_DEFAULT"
+
+        if [ ! -z "$2" ]; then
+            LIV_MESSAGE_COLOR="$2"
+            if [ ! -z "$3" ]; then
+                LIV_STATUS="$3"
+                if [ ! -z "$4" ]; then
+                    LIV_STATUS_COLOR="$4"
+                fi
+                LIV_MESSAGE_STATUS="$LIV_MESSAGE_COLOR[$LIV_STATUS_COLOR$LIV_STATUS$LIV_MESSAGE_COLOR] "
+            fi
+        fi
+
+        echo -e "$LIV_MESSAGE_STATUS$LIV_MESSAGE_COLOR$LIV_MESSAGE$LIV_COLOR_DEFAULT"
+    fi
+}
+
+# Print default message
+# $1 = Message
+# $2 = Status message
+# Usage:
+# liv_print_default 'Message'
+# liv_print_default 'Message' 'DONE'
+function liv_print_default {
+    liv_print_color "$1" "$LIV_COLOR_DEFAULT" "$2" "$LIV_COLOR_DEFAULT"
+}
+
+# Print success message
+# $1 = Message
+# $2 = Status message
+# Usage:
+# liv_print_success 'Message'
+# liv_print_success 'Message' 'DONE'
+function liv_print_success {
+    liv_print_color "$1" "$LIV_COLOR_DEFAULT" "$2" "$LIV_COLOR_SUCCESS"
+}
+
+# Print info message
+# $1 = Message
+# $2 = Status message
+# Usage:
+# liv_print_info 'Message'
+# liv_print_info 'Message' 'INFO'
+function liv_print_info {
+    liv_print_color "$1" "$LIV_COLOR_DEFAULT" "$2" "$LIV_COLOR_INFO"
+}
+
+# Print warning message
+# $1 = Message
+# $2 = Status message
+# Usage:
+# liv_print_warning 'Message'
+# liv_print_warning 'Message' 'WARNING'
+function liv_print_warning {
+    liv_print_color "$1" "$LIV_COLOR_DEFAULT" "$2" "$LIV_COLOR_WARNING"
+}
+
+# Print danger message
+# $1 = Message
+# $2 = Status message
+# Usage:
+# liv_print_danger 'Message'
+# liv_print_danger 'Message' 'FAILED'
+function liv_print_danger {
+    liv_print_color "$1" "$LIV_COLOR_DEFAULT" "$2" "$LIV_COLOR_DANGER"
+}
+
 # Recursively create directories and files.
 # $1 = input_dir
 # $2 = input_dir_c
