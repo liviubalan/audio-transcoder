@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Include libraries
-source ./lib.sh
+source ./resources/var.sh
+source ./resources/functions.sh
 
 # Params validation
 if [ -z "$input_dir" ]; then
